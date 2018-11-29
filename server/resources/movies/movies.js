@@ -3,13 +3,13 @@ var router = express.Router();
 var controller = require('./controller')
 router.get('/', controller.getAll)
 
-router.get('/:id([0-9]{1,4})', controller.getOne)
+router.get('/:id([a-z0-9]{24})', controller.getOne)
 
-router.put('/:id([0-9]{1,4})', controller.modificaFilm)
+router.put('/:id([a-z0-9]{24})', controller.modificaFilm)
 
-router.put('/voto/:id([0-9]{1,4})', controller.votaFilm)
+router.put('/voto/:id([a-z0-9]{24})', controller.votaFilm)
 
-router.delete('/:id([0-9]{1,4})', controller.eliminaFilm)
+router.delete('/:id([a-z0-9]{24})', controller.eliminaFilm)
 
 router.post('/', controller.creaFilm)
 
